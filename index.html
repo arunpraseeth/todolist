@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="stylesheet.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputtext">
+    <button onclick="addtext()">Add</button>
+    <ul id="unlist">
+        <li>
+            Hello
+            <Button id="deleteitem" onclick="deleteitem(event)">Delete</Button>
+        </li>
+    </ul>
+</body>
+</html>
+
+<script>
+    var inputtext = document.getElementById("inputtext")
+    var unlist = document.getElementById("unlist")
+
+    function addtext(){
+        var list = document.createElement("li")
+        var addbutton = document.createElement("Button")
+        list.innerHTML = inputtext.value + "<button onclick='deleteitem(event)'>Delete</button>"
+        unlist.append(list)
+    }
+
+    function deleteitem(event){
+        event.target.parentElement.remove()
+    }
+</script>
